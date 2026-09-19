@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Вакансии TOO «LyamBda Media». Ведущие трансляций и танцоры.">
+  <meta name="theme-color" content="#0d0d0d">
+
+  <title>TOO «LyamBda Media» — Вакансии</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background: rgba(17, 17, 17, 0.96);
+      backdrop-filter: blur(10px);
+
+      padding: 18px 6%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      border-bottom: 1px solid #252525;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ff3b8d;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff3b8d;
+    }
+
+    .hero {
+      min-height: 90vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+      padding: 60px 20px;
+
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.58),
+          rgba(0, 0, 0, 0.88)
+        ),
+        url("https://images.unsplash.com/photo-1521737711867-e3b97375f902")
+        center / cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 7vw, 70px);
+      line-height: 1.08;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #ff3b8d;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 35px;
+
+      color: #ddd;
+      font-size: 19px;
+    }
+
+    .btn {
+      display: inline-block;
+
+      background: #ff3b8d;
+      color: #fff;
+
+      padding: 14px 28px;
+      border-radius: 9px;
+
+      text-decoration: none;
+      font-weight: 700;
+
+      border: none;
+      cursor: pointer;
+
+      transition: 0.25s;
+    }
+
+    .btn:hover {
+      background: #e52d78;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid #ff3b8d;
+      margin-left: 10px;
+    }
+
+    .btn-secondary:hover {
+      background: #ff3b8d;
+    }
+
+    section {
+      padding: 90px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(30px, 5vw, 42px);
+      margin-bottom: 50px;
+    }
+
+    .about {
+      max-width: 900px;
+      margin: auto;
+
+      text-align: center;
+
+      color: #c8c8c8;
+      font-size: 18px;
+    }
+
+    .jobs {
+      max-width: 1050px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .job,
+    .card,
+    .salary-card {
+      background: #181818;
+
+      border: 1px solid #292929;
+      border-radius: 16px;
+
+      padding: 35px;
+
+      transition: 0.3s;
+    }
+
+    .job:hover,
+    .card:hover,
+    .salary-card:hover {
+      transform: translateY(-6px);
+      border-color: #ff3b8d;
+    }
+
+    .job h3 {
+      color: #ff3b8d;
+      font-size: 27px;
+      margin-bottom: 15px;
+    }
+
+    .job p {
+      color: #bbb;
+      margin-bottom: 15px;
+    }
+
+    .job ul {
+      color: #bbb;
+      margin: 15px 0 25px 20px;
+    }
+
+    .job li {
+      margin-bottom: 8px;
+    }
+
+    .advantages {
+      max-width: 1100px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      text-align: center;
+    }
+
+    .card h3 {
+      color: #ff3b8d;
+      font-size: 23px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #bbb;
+    }
+
+    .salary {
+      max-width: 950px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .salary-card {
+      text-align: center;
+    }
+
+    .salary-card h3 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .salary-card strong {
+      display: block;
+
+      color: #ff3b8d;
+      font-size: 32px;
+
+      margin: 20px 0;
+    }
+
+    .salary-card p {
+      color: #bbb;
+      margin: 8px 0;
+    }
+
+    .contact-box {
+      max-width: 650px;
+      margin: auto;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+
+      padding: 15px;
+
+      border: 1px solid #292929;
+      border-radius: 9px;
+
+      background: #181818;
+      color: #fff;
+
+      font-size: 16px;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #ff3b8d;
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .form-note {
+      color: #888;
+      font-size: 13px;
+      margin-top: -5px;
+    }
+
+    footer {
+      background: #080808;
+      border-top: 1px solid #1e1e1e;
+
+      text-align: center;
+
+      padding: 30px 20px;
+
+      color: #777;
+    }
+
+    .whatsapp-link {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .whatsapp-link a {
+      color: #ff3b8d;
+      text-decoration: none;
+    }
+
+    @media (max-width: 850px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .jobs,
+      .advantages,
+      .salary {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 70px 5%;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .logo {
+        font-size: 19px;
+      }
+
+      nav a {
+        font-size: 13px;
+      }
+
+      .hero {
+        min-height: 80vh;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .btn-secondary {
+        margin: 10px 0 0;
+      }
+
+      .job,
+      .card,
+      .salary-card {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ШАПКА -->
+
+  <header>
+
+    <div class="logo">
+      TOO «LyamBda Media»
+    </div>
+
+    <nav>
+      <a href="#about">О компании</a>
+      <a href="#jobs">Вакансии</a>
+      <a href="#advantages">Условия</a>
+      <a href="#salary">Доход</a>
+      <a href="#contact">Отклик</a>
+    </nav>
+
+  </header>
+
+
+  <!-- ГЛАВНЫЙ ЭКРАН -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>
+        Работа для<br>
+        <span>ведущих трансляции</span><br>
+        и танцоров
+      </h1>
+
+      <p>
+        Присоединяйся к нашей команде.
+        Участвуй в прямых трансляциях,
+        съёмках и творческих проектах.
+      </p>
+
+      <a href="#jobs" class="btn">
+        Смотреть вакансии
+      </a>
+
+      <a href="#contact" class="btn btn-secondary">
+        Откликнуться
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- О КОМПАНИИ -->
+
+  <section id="about">
+
+    <h2 class="section-title">
+      О компании
+    </h2>
+
+    <div class="about">
+
+      <p>
+        TOO «LyamBda Media» — творческая команда,
+        которая занимается созданием современного
+        развлекательного и танцевального контента
+        для социальных сетей.
+
+        Мы принимаем на работу талантливых
+        ведущих трансляции и танцоров, которые хотят
+        развиваться в творческой сфере, участвовать
+        в прямых эфирах, съёмках и интересных проектах.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ВАКАНСИИ -->
+
+  <section id="jobs">
+
+    <h2 class="section-title">
+      Открытые вакансии
+    </h2>
+
+    <div class="jobs">
+
+      <div class="job">
+
+        <h3>🎙️ Ведущий трансляции</h3>
+
+        <p>
+          Ищем общительных и харизматичных людей,
+          которые уверенно чувствуют себя перед камерой
+          и готовы вести прямые трансляции.
+        </p>
+
+        <ul>
+          <li>Проведение прямых трансляций</li>
+          <li>Общение со зрителями</li>
+          <li>Создание развлекательного контента</li>
+          <li>Работа перед камерой</li>
+          <li>Участие в проектах компании</li>
+        </ul>
+
+        <p>
+          <b>Опыт:</b> не обязателен
+        </p>
+
+        <a href="#contact" class="btn">
+          Откликнуться
+        </a>
+
+      </div>
+
+
+      <div class="job">
+
+        <h3>💃 Танцор</h3>
+
+        <p>
+          Ищем танцоров для съёмок,
+          клипов и других развлекательных проектов.
+        </p>
+
+        <ul>
+          <li>Участие в танцевальных видео</li>
+          <li>Съёмка развлекательного контента</li>
+          <li>Участие в постановках</li>
+          <li>Съёмки рекламных проектов</li>
+          <li>Работа в творческой команде</li>
+        </ul>
+
+        <p>
+          <b>Опыт:</b> желателен
+        </p>
+
+        <a href="#contact" class="btn">
+          Откликнуться
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ПРЕИМУЩЕСТВА -->
+
+  <section id="advantages">
+
+    <h2 class="section-title">
+      Что мы предлагаем
+    </h2>
+
+    <div class="advantages">
+
+      <div class="card">
+        <h3>💰 Оплата</h3>
+        <p>
+          Оплата за работу и участие
+          в проектах компании.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🎙️ Прямые эфиры</h3>
+        <p>
+          Возможность проводить трансляции,
+          общаться со зрителями и развивать
+          свои навыки ведущего.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🚀 Развитие</h3>
+        <p>
+          Получайте новый опыт и развивайте
+          свои творческие навыки.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🎬 Съёмки</h3>
+        <p>
+          Участие в съёмках развлекательного
+          и танцевального контента.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>👥 Команда</h3>
+        <p>
+          Работа вместе с другими ведущими,
+          креаторами и танцорами.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>⭐ Проекты</h3>
+        <p>
+          Участие в новых творческих
+          и рекламных проектах.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ДОХОД -->
+
+  <section id="salary">
+
+    <h2 class="section-title">
+      Условия работы
+    </h2>
+
+    <div class="salary">
+
+      <div class="salary-card">
+
+        <h3>🎙️ Ведущий трансляции</h3>
+
+        <strong>
+          от 300 000 ₸
+        </strong>
+
+        <p>Проведение прямых трансляций</p>
+        <p>Общение со зрителями</p>
+        <p>Работа с командой</p>
+
+      </div>
+
+
+      <div class="salary-card">
+
+        <h3>💃 Танцор</h3>
+
+        <strong>
+          от 300 000 ₸
+        </strong>
+
+        <p>Участие в съёмках</p>
+        <p>Танцевальные проекты</p>
+        <p>Работа в команде</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ОТКЛИК -->
+
+  <section id="contact">
+
+    <h2 class="section-title">
+      Хочешь работать с нами?
+    </h2>
+
+    <div class="contact-box">
+
+      <form id="contactForm">
+
+        <input
+          type="text"
+          id="name"
+          placeholder="Ваше имя"
+          required
+        >
+
+        <input
+          type="tel"
+          id="phone"
+          placeholder="Номер телефона"
+          required
+        >
+
+        <input
+          type="text"
+          id="tiktok"
+          placeholder="@ваш TikTok"
+        >
+
+        <select id="job" required>
+
+          <option value="">
+            Выберите вакансию
+          </option>
+
+          <option value="Ведущий трансляции">
+            Ведущий трансляции
+          </option>
+
+          <option value="Танцор">
+            Танцор
+          </option>
+
+        </select>
+
+        <textarea
+          id="message"
+          placeholder="Расскажите о себе, вашем опыте и навыках"
+          required
+        ></textarea>
+
+        <button
+          class="btn"
+          type="submit"
+        >
+          Отправить отклик в WhatsApp
+        </button>
+
+        <p class="form-note">
+          После отправки откроется WhatsApp
+          с подготовленным сообщением.
+        </p>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 TOO «LyamBda Media».
+    Все права защищены.
+
+  </footer>
+
+
+  <script>
+
+    /*
+      ==========================================
+      ВАЖНО!
+      ЗАМЕНИ НОМЕР НИЖЕ НА СВОЙ WHATSAPP.
+      
+      Формат:
+      77001234567
+      
+      Без +, пробелов и скобок.
+      ==========================================
+    */
+
+    const whatsappNumber = "87471670601";
+
+
+    const form =
+      document.getElementById("contactForm");
+
+
+    form.addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+
+      const name =
+        document.getElementById("name").value.trim();
+
+      const phone =
+        document.getElementById("phone").value.trim();
+
+      const tiktok =
+        document.getElementById("tiktok").value.trim();
+
+      const job =
+        document.getElementById("job").value;
+
+      const message =
+        document.getElementById("message").value.trim();
+
+
+      const whatsappMessage =
+        `Новая заявка на вакансию
+
+Имя: ${name}
+
+Телефон: ${phone}
+
+TikTok: ${tiktok || "Не указан"}
+
+Вакансия: ${job}
+
+О себе:
+${message}`;
+
+
+      const whatsappURL =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(whatsappMessage);
+
+
+      window.open(
+        whatsappURL,
+        "_blank"
+      );
+
+    });
+
+  </script>
+
+</body>
+</html>
