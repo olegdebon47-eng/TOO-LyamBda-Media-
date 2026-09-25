@@ -1,16 +1,17 @@
+```html
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Вакансии TOO «LyamBda Media». Ведущие трансляций и танцоры.">
+  <meta name="description" content="Вакансии TOO «LyamBda Media». Стримеры, ведущие трансляций и танцоры.">
   <meta name="theme-color" content="#111111">
 
   <title>TOO «LyamBda Media» — Работа в медиа</title>
 
   <style>
-
     /* =====================================================
        ОСНОВА
     ===================================================== */
@@ -87,14 +88,10 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-
       background: rgba(10, 10, 10, 0.88);
       backdrop-filter: blur(18px);
-
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
       padding: 18px 5%;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -151,19 +148,17 @@
 
     .hero {
       min-height: 88vh;
-
       display: flex;
       align-items: center;
-
       position: relative;
       overflow: hidden;
 
       background:
         linear-gradient(
           90deg,
-          rgba(0,0,0,0.94) 0%,
-          rgba(0,0,0,0.72) 48%,
-          rgba(0,0,0,0.55) 100%
+          rgba(0, 0, 0, 0.94) 0%,
+          rgba(0, 0, 0, 0.72) 48%,
+          rgba(0, 0, 0, 0.55) 100%
         ),
         url("https://images.unsplash.com/photo-1521737711867-e3b97375f902")
         center / cover no-repeat;
@@ -174,12 +169,10 @@
       position: absolute;
       inset: auto 0 0;
       height: 180px;
-
       background: linear-gradient(
         transparent,
         #0b0b0b
       );
-
       pointer-events: none;
     }
 
@@ -195,19 +188,13 @@
       display: inline-flex;
       align-items: center;
       gap: 9px;
-
       color: #d5d5d5;
-
       font-size: 13px;
       font-weight: 600;
-
       padding: 8px 13px;
-
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.05);
-
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.05);
       border-radius: 100px;
-
       margin-bottom: 25px;
     }
 
@@ -248,18 +235,12 @@
       display: inline-flex;
       justify-content: center;
       align-items: center;
-
       padding: 15px 25px;
-
       border-radius: 9px;
-
       text-decoration: none;
       font-weight: 700;
-
       border: 1px solid transparent;
-
       cursor: pointer;
-
       transition: 0.25s ease;
     }
 
@@ -271,12 +252,12 @@
     .btn-primary:hover {
       background: #ffe34d;
       transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(255,214,0,0.15);
+      box-shadow: 0 12px 30px rgba(255, 214, 0, 0.15);
     }
 
     .btn-outline {
-      background: rgba(255,255,255,0.04);
-      border-color: rgba(255,255,255,0.15);
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.15);
       color: #fff;
     }
 
@@ -299,12 +280,9 @@
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-
       background: #151515;
-
       border: 1px solid #252525;
       border-radius: 18px;
-
       overflow: hidden;
     }
 
@@ -428,17 +406,14 @@
 
     .about-highlight {
       padding: 35px;
-
       background:
         linear-gradient(
           135deg,
           #191919,
           #111
         );
-
       border: 1px solid #282828;
       border-radius: 20px;
-
       position: relative;
       overflow: hidden;
     }
@@ -478,7 +453,7 @@
 
     .jobs {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
 
@@ -487,10 +462,8 @@
       border: 1px solid #252525;
       border-radius: 20px;
       padding: 38px;
-
       position: relative;
       overflow: hidden;
-
       transition:
         transform 0.35s ease,
         border-color 0.35s ease,
@@ -499,7 +472,7 @@
 
     .job:hover {
       transform: translateY(-8px);
-      border-color: rgba(255,214,0,0.45);
+      border-color: rgba(255, 214, 0, 0.45);
       background: #181818;
     }
 
@@ -507,28 +480,21 @@
       position: absolute;
       top: 25px;
       right: 30px;
-
       font-size: 60px;
       font-weight: 900;
-
-      color: rgba(255,255,255,0.035);
+      color: rgba(255, 255, 255, 0.035);
     }
 
     .job-icon {
       width: 55px;
       height: 55px;
-
       display: flex;
       justify-content: center;
       align-items: center;
-
-      background: rgba(255,214,0,0.08);
-      border: 1px solid rgba(255,214,0,0.15);
-
+      background: rgba(255, 214, 0, 0.08);
+      border: 1px solid rgba(255, 214, 0, 0.15);
       border-radius: 14px;
-
       font-size: 25px;
-
       margin-bottom: 25px;
     }
 
@@ -592,12 +558,9 @@
 
     .process-card {
       padding: 30px 25px;
-
       border: 1px solid #252525;
       border-radius: 16px;
-
       background: #151515;
-
       transition: 0.3s;
     }
 
@@ -638,13 +601,12 @@
       border-radius: 18px;
       border: 1px solid #242424;
       background: #141414;
-
       transition: 0.3s ease;
     }
 
     .card:hover {
       transform: translateY(-6px);
-      border-color: rgba(255,214,0,0.35);
+      border-color: rgba(255, 214, 0, 0.35);
     }
 
     .card-icon {
@@ -677,7 +639,7 @@
 
     .salary {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
 
@@ -695,11 +657,9 @@
       position: absolute;
       right: 25px;
       top: 15px;
-
       font-size: 110px;
       font-weight: 900;
-
-      color: rgba(255,214,0,0.035);
+      color: rgba(255, 214, 0, 0.035);
     }
 
     .salary-card h3 {
@@ -745,23 +705,16 @@
 
     .faq-question {
       width: 100%;
-
       display: flex;
       justify-content: space-between;
       align-items: center;
-
       background: none;
       border: none;
-
       color: #fff;
-
       text-align: left;
-
       padding: 23px 0;
-
       font-size: 17px;
       font-weight: 700;
-
       cursor: pointer;
     }
 
@@ -774,10 +727,8 @@
     .faq-answer {
       max-height: 0;
       overflow: hidden;
-
       color: #858585;
       font-size: 14px;
-
       transition: max-height 0.35s ease;
     }
 
@@ -786,7 +737,7 @@
     }
 
     .faq-item.active .faq-answer {
-      max-height: 200px;
+      max-height: 300px;
     }
 
     .faq-item.active .faq-plus {
@@ -851,19 +802,13 @@
     textarea,
     select {
       width: 100%;
-
       padding: 15px 16px;
-
       border: 1px solid #292929;
       border-radius: 9px;
-
       background: #101010;
       color: #fff;
-
       font-size: 15px;
-
       outline: none;
-
       transition: 0.25s;
     }
 
@@ -900,25 +845,18 @@
       right: 25px;
       bottom: 25px;
       z-index: 999;
-
       width: 55px;
       height: 55px;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       background: #ffd600;
       color: #111;
-
       border-radius: 50%;
-
       text-decoration: none;
       font-size: 23px;
       font-weight: 700;
-
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
       transition: 0.3s;
     }
 
@@ -960,8 +898,19 @@
        MOBILE
     ===================================================== */
 
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
+      .jobs,
+      .salary {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
+      .about-layout,
+      .contact-wrapper {
+        gap: 45px;
+      }
+    }
+
+    @media (max-width: 900px) {
       header {
         padding: 16px 5%;
       }
@@ -978,7 +927,7 @@
         border-right: none;
       }
 
-      .stat:nth-child(-n+2) {
+      .stat:nth-child(-n + 2) {
         border-bottom: 1px solid #292929;
       }
 
@@ -998,7 +947,6 @@
     }
 
     @media (max-width: 650px) {
-
       header {
         justify-content: center;
       }
@@ -1081,15 +1029,11 @@
         right: 18px;
         bottom: 18px;
       }
-
     }
-
   </style>
 </head>
 
-
 <body>
-
 
   <!-- =====================================================
        HEADER
@@ -1204,6 +1148,10 @@
       </div>
 
       <div class="marquee-item">
+        STREAMER <span>✦</span>
+      </div>
+
+      <div class="marquee-item">
         CONTENT <span>✦</span>
       </div>
 
@@ -1221,6 +1169,10 @@
 
       <div class="marquee-item">
         TikTok LIVE <span>✦</span>
+      </div>
+
+      <div class="marquee-item">
+        STREAMER <span>✦</span>
       </div>
 
       <div class="marquee-item">
@@ -1274,10 +1226,10 @@
             </p>
 
             <p>
-              Мы развиваем ведущих трансляций и танцоров,
-              помогаем им раскрывать свои способности,
-              работать перед камерой и становиться частью
-              профессиональной команды.
+              Мы развиваем ведущих трансляций, стримеров
+              и танцоров, помогаем им раскрывать свои
+              способности, работать перед камерой и
+              становиться частью профессиональной команды.
             </p>
 
             <p>
@@ -1333,7 +1285,7 @@
         </h2>
 
         <p class="section-description">
-          Сейчас мы ищем людей на два творческих направления.
+          Сейчас мы ищем людей на три творческих направления.
           Посмотри, что подходит именно тебе.
         </p>
 
@@ -1368,13 +1320,9 @@
           <ul>
 
             <li>Проведение прямых трансляций</li>
-
             <li>Общение со зрителями</li>
-
             <li>Создание развлекательного контента</li>
-
             <li>Работа перед камерой</li>
-
             <li>Участие в проектах компании</li>
 
           </ul>
@@ -1414,19 +1362,61 @@
           <ul>
 
             <li>Участие в танцевальных видео</li>
-
             <li>Съёмка развлекательного контента</li>
-
             <li>Участие в постановках</li>
-
             <li>Съёмки рекламных проектов</li>
-
             <li>Работа в творческой команде</li>
 
           </ul>
 
           <div class="job-experience">
             <b>Опыт:</b> желателен
+          </div>
+
+          <a href="#contact" class="btn btn-primary">
+            Хочу попробовать →
+          </a>
+
+        </div>
+
+
+        <!-- СТРИМЕР -->
+
+        <div class="job reveal">
+
+          <div class="job-number">
+            03
+          </div>
+
+          <div class="job-icon">
+            📱
+          </div>
+
+          <h3>
+            Стример
+          </h3>
+
+          <p class="job-description">
+            Ищем активных и открытых людей,
+            которые хотят развиваться в сфере стриминга,
+            общаться с аудиторией и создавать контент
+            в прямом эфире.
+          </p>
+
+          <ul>
+
+            <li>Проведение прямых эфиров</li>
+            <li>Общение с аудиторией</li>
+            <li>Создание развлекательного контента</li>
+            <li>Работа перед камерой</li>
+            <li>Участие в проектах компании</li>
+
+          </ul>
+
+          <!-- ИЗМЕНЕНО: ОПЫТ ОБЯЗАТЕЛЕН -->
+
+          <div class="job-experience">
+            <b>Опыт:</b> обязателен
           </div>
 
           <a href="#contact" class="btn btn-primary">
@@ -1662,8 +1652,8 @@
 
           <p>
             Работа вместе с ведущими,
-            креаторами, танцорами
-            и другими специалистами.
+            стримерами, креаторами,
+            танцорами и другими специалистами.
           </p>
 
         </div>
@@ -1733,11 +1723,42 @@
             от 300 000 ₸
           </strong>
 
-          <p>Проведение прямых трансляций</p>
+          <p>
+            Проведение прямых трансляций
+          </p>
 
-          <p>Общение со зрителями</p>
+          <p>
+            Общение со зрителями
+          </p>
 
-          <p>Работа с командой</p>
+          <p>
+            Работа с командой
+          </p>
+
+        </div>
+
+
+        <div class="salary-card reveal">
+
+          <h3>
+            📱 Стример
+          </h3>
+
+          <strong>
+            от 300 000 ₸
+          </strong>
+
+          <p>
+            Проведение прямых эфиров
+          </p>
+
+          <p>
+            Общение с аудиторией
+          </p>
+
+          <p>
+            Работа с командой
+          </p>
 
         </div>
 
@@ -1752,11 +1773,17 @@
             от 300 000 ₸
           </strong>
 
-          <p>Участие в съёмках</p>
+          <p>
+            Участие в съёмках
+          </p>
 
-          <p>Танцевальные проекты</p>
+          <p>
+            Танцевальные проекты
+          </p>
 
-          <p>Работа в команде</p>
+          <p>
+            Работа в команде
+          </p>
 
         </div>
 
@@ -1797,6 +1824,8 @@
       <div class="faq">
 
 
+        <!-- ОПЫТ -->
+
         <div class="faq-item reveal">
 
           <button class="faq-question">
@@ -1813,9 +1842,14 @@
 
             <div class="faq-answer-inner">
 
-              Для ведущего трансляции опыт не обязателен.
-              Главное — желание работать, общительность
-              и готовность развиваться перед камерой.
+              Для ведущего трансляции
+              опыт не обязателен.
+              Главное — желание работать,
+              общительность и готовность развиваться
+              перед камерой.
+
+              Для стримера опыт работы обязателен.
+
               Для танцора опыт желателен.
 
             </div>
@@ -1824,6 +1858,38 @@
 
         </div>
 
+
+        <!-- СТРИМЕР -->
+
+        <div class="faq-item reveal">
+
+          <button class="faq-question">
+
+            Что делает стример?
+
+            <span class="faq-plus">
+              +
+            </span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <div class="faq-answer-inner">
+
+              Стример проводит прямые эфиры,
+              общается с аудиторией, создаёт
+              развлекательный контент и работает
+              перед камерой.
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ВЕДУЩИЙ -->
 
         <div class="faq-item reveal">
 
@@ -1852,6 +1918,8 @@
         </div>
 
 
+        <!-- ОБУЧЕНИЕ -->
+
         <div class="faq-item reveal">
 
           <button class="faq-question">
@@ -1877,6 +1945,8 @@
 
         </div>
 
+
+        <!-- СОБЕСЕДОВАНИЕ -->
 
         <div class="faq-item reveal">
 
@@ -1994,6 +2064,10 @@
                 Ведущий трансляции
               </option>
 
+              <option value="Стример">
+                Стример
+              </option>
+
               <option value="Танцор">
                 Танцор
               </option>
@@ -2022,7 +2096,6 @@
 
         </div>
 
-
       </div>
 
     </div>
@@ -2049,10 +2122,8 @@
   ===================================================== -->
 
   <footer>
-
     © 2026 TOO «LyamBda Media».
     Все права защищены.
-
   </footer>
 
 
@@ -2102,6 +2173,7 @@ TikTok: ${tiktok || "Не указан"}
 Вакансия: ${job}
 
 О себе:
+
 ${message}`;
 
       const whatsappURL =
@@ -2158,7 +2230,6 @@ ${message}`;
 
     const observer =
       new IntersectionObserver(
-
         function(entries) {
 
           entries.forEach(function(entry) {
@@ -2176,23 +2247,19 @@ ${message}`;
           });
 
         },
-
         {
           threshold: 0.12
         }
-
       );
 
 
     revealElements.forEach(function(element) {
-
       observer.observe(element);
-
     });
-
 
   </script>
 
-
 </body>
+
 </html>
+```
