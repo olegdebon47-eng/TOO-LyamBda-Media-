@@ -5,11 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description" content="Вакансии TOO «LyamBda Media». Ведущие трансляций и танцоры.">
-  <meta name="theme-color" content="#0d0d0d">
+  <meta name="theme-color" content="#111111">
 
-  <title>TOO «LyamBda Media» — Вакансии</title>
+  <title>TOO «LyamBda Media» — Работа в медиа</title>
 
   <style>
+
+    /* =====================================================
+       ОСНОВА
+    ===================================================== */
+
     * {
       margin: 0;
       padding: 0;
@@ -21,263 +26,825 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #0d0d0d;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0b0b;
       color: #fff;
       line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: #ffd600;
+      color: #111;
     }
 
     a {
       color: inherit;
     }
 
+    .container {
+      width: min(1180px, 90%);
+      margin: 0 auto;
+    }
+
+    /* =====================================================
+       ФОНОВЫЕ ЭФФЕКТЫ
+    ===================================================== */
+
+    body::before {
+      content: "";
+      position: fixed;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      background: rgba(255, 214, 0, 0.025);
+      filter: blur(100px);
+      top: 10%;
+      left: -200px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: rgba(255, 140, 0, 0.02);
+      filter: blur(120px);
+      bottom: 0;
+      right: -250px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
 
-      background: rgba(17, 17, 17, 0.96);
-      backdrop-filter: blur(10px);
+      background: rgba(10, 10, 10, 0.88);
+      backdrop-filter: blur(18px);
 
-      padding: 18px 6%;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+
+      padding: 18px 5%;
 
       display: flex;
-      justify-content: space-between;
       align-items: center;
-
-      border-bottom: 1px solid #252525;
+      justify-content: space-between;
+      gap: 30px;
     }
 
     .logo {
-      font-size: 22px;
-      font-weight: 700;
-      color: #ff3b8d;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
       white-space: nowrap;
+    }
+
+    .logo span {
+      color: #ffd600;
     }
 
     nav {
       display: flex;
-      gap: 22px;
+      gap: 28px;
+      align-items: center;
     }
 
     nav a {
-      color: #fff;
       text-decoration: none;
-      font-size: 15px;
-      transition: 0.3s;
+      color: #aaa;
+      font-size: 14px;
+      transition: 0.25s ease;
     }
 
     nav a:hover {
-      color: #ff3b8d;
+      color: #ffd600;
     }
 
+    .header-button {
+      background: #ffd600;
+      color: #111;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.25s;
+    }
+
+    .header-button:hover {
+      background: #ffe34d;
+      transform: translateY(-2px);
+    }
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
     .hero {
-      min-height: 90vh;
+      min-height: 88vh;
 
       display: flex;
-      justify-content: center;
       align-items: center;
 
-      text-align: center;
-      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
 
       background:
         linear-gradient(
-          rgba(0, 0, 0, 0.58),
-          rgba(0, 0, 0, 0.88)
+          90deg,
+          rgba(0,0,0,0.94) 0%,
+          rgba(0,0,0,0.72) 48%,
+          rgba(0,0,0,0.55) 100%
         ),
         url("https://images.unsplash.com/photo-1521737711867-e3b97375f902")
         center / cover no-repeat;
     }
 
-    .hero-content {
-      max-width: 900px;
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 180px;
+
+      background: linear-gradient(
+        transparent,
+        #0b0b0b
+      );
+
+      pointer-events: none;
     }
 
-    .hero h1 {
-      font-size: clamp(40px, 7vw, 70px);
-      line-height: 1.08;
+    .hero-content {
+      width: min(850px, 90%);
+      margin: 0 auto;
+      padding: 100px 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      color: #d5d5d5;
+
+      font-size: 13px;
+      font-weight: 600;
+
+      padding: 8px 13px;
+
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+
+      border-radius: 100px;
+
       margin-bottom: 25px;
     }
 
+    .hero-label::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      background: #ffd600;
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 7vw, 82px);
+      line-height: 0.98;
+      letter-spacing: -3px;
+      margin-bottom: 30px;
+      max-width: 900px;
+    }
+
     .hero h1 span {
-      color: #ff3b8d;
+      color: #ffd600;
     }
 
     .hero p {
-      max-width: 700px;
-      margin: 0 auto 35px;
-
-      color: #ddd;
+      color: #c5c5c5;
       font-size: 19px;
+      max-width: 680px;
+      margin-bottom: 38px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     .btn {
-      display: inline-block;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
 
-      background: #ff3b8d;
-      color: #fff;
+      padding: 15px 25px;
 
-      padding: 14px 28px;
       border-radius: 9px;
 
       text-decoration: none;
       font-weight: 700;
 
-      border: none;
+      border: 1px solid transparent;
+
       cursor: pointer;
 
-      transition: 0.25s;
+      transition: 0.25s ease;
     }
 
-    .btn:hover {
-      background: #e52d78;
-      transform: translateY(-2px);
+    .btn-primary {
+      background: #ffd600;
+      color: #111;
     }
 
-    .btn-secondary {
-      background: transparent;
-      border: 1px solid #ff3b8d;
-      margin-left: 10px;
+    .btn-primary:hover {
+      background: #ffe34d;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(255,214,0,0.15);
     }
 
-    .btn-secondary:hover {
-      background: #ff3b8d;
+    .btn-outline {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.15);
+      color: #fff;
     }
+
+    .btn-outline:hover {
+      border-color: #ffd600;
+      color: #ffd600;
+      transform: translateY(-3px);
+    }
+
+    /* =====================================================
+       STATS
+    ===================================================== */
+
+    .stats {
+      position: relative;
+      z-index: 5;
+      margin-top: -65px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      background: #151515;
+
+      border: 1px solid #252525;
+      border-radius: 18px;
+
+      overflow: hidden;
+    }
+
+    .stat {
+      padding: 30px 25px;
+      text-align: center;
+      border-right: 1px solid #292929;
+    }
+
+    .stat:last-child {
+      border-right: none;
+    }
+
+    .stat strong {
+      display: block;
+      color: #ffd600;
+      font-size: 30px;
+      margin-bottom: 5px;
+    }
+
+    .stat span {
+      color: #888;
+      font-size: 13px;
+    }
+
+    /* =====================================================
+       MARQUEE
+    ===================================================== */
+
+    .marquee {
+      overflow: hidden;
+      white-space: nowrap;
+      border-bottom: 1px solid #1c1c1c;
+      padding: 20px 0;
+      margin-top: 80px;
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      gap: 45px;
+      animation: marquee 22s linear infinite;
+    }
+
+    .marquee-item {
+      color: #555;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .marquee-item span {
+      color: #ffd600;
+      margin-right: 45px;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* =====================================================
+       SECTIONS
+    ===================================================== */
 
     section {
-      padding: 90px 7%;
+      padding: 110px 0;
+    }
+
+    .section-heading {
+      max-width: 750px;
+      margin-bottom: 55px;
+    }
+
+    .section-tag {
+      color: #ffd600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 14px;
     }
 
     .section-title {
-      text-align: center;
-      font-size: clamp(30px, 5vw, 42px);
-      margin-bottom: 50px;
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 18px;
     }
 
-    .about {
-      max-width: 900px;
-      margin: auto;
-
-      text-align: center;
-
-      color: #c8c8c8;
-      font-size: 18px;
+    .section-description {
+      color: #888;
+      font-size: 17px;
+      max-width: 650px;
     }
+
+    /* =====================================================
+       ABOUT
+    ===================================================== */
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-text {
+      color: #b8b8b8;
+      font-size: 17px;
+    }
+
+    .about-text p {
+      margin-bottom: 20px;
+    }
+
+    .about-highlight {
+      padding: 35px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #191919,
+          #111
+        );
+
+      border: 1px solid #282828;
+      border-radius: 20px;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-highlight::before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: #ffd600;
+      opacity: 0.06;
+      border-radius: 50%;
+      top: -40px;
+      right: -30px;
+    }
+
+    .about-highlight strong {
+      display: block;
+      font-size: 45px;
+      color: #ffd600;
+      margin-bottom: 5px;
+    }
+
+    .about-highlight h3 {
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    .about-highlight p {
+      color: #888;
+      font-size: 14px;
+    }
+
+    /* =====================================================
+       JOBS
+    ===================================================== */
 
     .jobs {
-      max-width: 1050px;
-      margin: auto;
-
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
+      gap: 22px;
     }
 
-    .job,
-    .card,
-    .salary-card {
-      background: #181818;
+    .job {
+      background: #151515;
+      border: 1px solid #252525;
+      border-radius: 20px;
+      padding: 38px;
 
-      border: 1px solid #292929;
+      position: relative;
+      overflow: hidden;
+
+      transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease;
+    }
+
+    .job:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255,214,0,0.45);
+      background: #181818;
+    }
+
+    .job-number {
+      position: absolute;
+      top: 25px;
+      right: 30px;
+
+      font-size: 60px;
+      font-weight: 900;
+
+      color: rgba(255,255,255,0.035);
+    }
+
+    .job-icon {
+      width: 55px;
+      height: 55px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: rgba(255,214,0,0.08);
+      border: 1px solid rgba(255,214,0,0.15);
+
+      border-radius: 14px;
+
+      font-size: 25px;
+
+      margin-bottom: 25px;
+    }
+
+    .job h3 {
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+
+    .job-description {
+      color: #999;
+      margin-bottom: 25px;
+    }
+
+    .job ul {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+
+    .job li {
+      color: #bdbdbd;
+      margin-bottom: 11px;
+      padding-left: 22px;
+      position: relative;
+    }
+
+    .job li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #ffd600;
+      font-weight: 700;
+    }
+
+    .job-experience {
+      color: #777;
+      font-size: 14px;
+      padding-top: 20px;
+      border-top: 1px solid #262626;
+      margin-bottom: 25px;
+    }
+
+    .job-experience b {
+      color: #fff;
+    }
+
+    /* =====================================================
+       PROCESS
+    ===================================================== */
+
+    .process {
+      background: #101010;
+      border-top: 1px solid #191919;
+      border-bottom: 1px solid #191919;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .process-card {
+      padding: 30px 25px;
+
+      border: 1px solid #252525;
       border-radius: 16px;
 
-      padding: 35px;
+      background: #151515;
 
       transition: 0.3s;
     }
 
-    .job:hover,
-    .card:hover,
-    .salary-card:hover {
-      transform: translateY(-6px);
-      border-color: #ff3b8d;
+    .process-card:hover {
+      border-color: #ffd600;
+      transform: translateY(-5px);
     }
 
-    .job h3 {
-      color: #ff3b8d;
-      font-size: 27px;
-      margin-bottom: 15px;
+    .process-number {
+      font-size: 13px;
+      color: #ffd600;
+      font-weight: 800;
+      margin-bottom: 25px;
     }
 
-    .job p {
-      color: #bbb;
-      margin-bottom: 15px;
-    }
-
-    .job ul {
-      color: #bbb;
-      margin: 15px 0 25px 20px;
-    }
-
-    .job li {
-      margin-bottom: 8px;
-    }
-
-    .advantages {
-      max-width: 1100px;
-      margin: auto;
-
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .card {
-      text-align: center;
-    }
-
-    .card h3 {
-      color: #ff3b8d;
-      font-size: 23px;
+    .process-card h3 {
+      font-size: 20px;
       margin-bottom: 12px;
     }
 
+    .process-card p {
+      color: #888;
+      font-size: 14px;
+    }
+
+    /* =====================================================
+       ADVANTAGES
+    ===================================================== */
+
+    .advantages {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      padding: 32px;
+      border-radius: 18px;
+      border: 1px solid #242424;
+      background: #141414;
+
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255,214,0,0.35);
+    }
+
+    .card-icon {
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
     .card p {
-      color: #bbb;
+      color: #858585;
+      font-size: 14px;
+    }
+
+    /* =====================================================
+       SALARY
+    ===================================================== */
+
+    .salary-section {
+      background:
+        linear-gradient(
+          180deg,
+          #0b0b0b,
+          #111
+        );
     }
 
     .salary {
-      max-width: 950px;
-      margin: auto;
-
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
+      gap: 22px;
     }
 
     .salary-card {
-      text-align: center;
+      background: #161616;
+      border: 1px solid #282828;
+      border-radius: 20px;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .salary-card::after {
+      content: "₸";
+      position: absolute;
+      right: 25px;
+      top: 15px;
+
+      font-size: 110px;
+      font-weight: 900;
+
+      color: rgba(255,214,0,0.035);
     }
 
     .salary-card h3 {
-      font-size: 25px;
-      margin-bottom: 10px;
+      font-size: 21px;
+      position: relative;
+      z-index: 2;
     }
 
     .salary-card strong {
       display: block;
-
-      color: #ff3b8d;
-      font-size: 32px;
-
+      color: #ffd600;
+      font-size: 42px;
       margin: 20px 0;
+      position: relative;
+      z-index: 2;
     }
 
     .salary-card p {
-      color: #bbb;
+      color: #888;
       margin: 8px 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .salary-note {
+      margin-top: 25px;
+      color: #666;
+      font-size: 12px;
+    }
+
+    /* =====================================================
+       FAQ
+    ===================================================== */
+
+    .faq {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #282828;
+    }
+
+    .faq-question {
+      width: 100%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      background: none;
+      border: none;
+
+      color: #fff;
+
+      text-align: left;
+
+      padding: 23px 0;
+
+      font-size: 17px;
+      font-weight: 700;
+
+      cursor: pointer;
+    }
+
+    .faq-plus {
+      color: #ffd600;
+      font-size: 25px;
+      transition: 0.3s;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+
+      color: #858585;
+      font-size: 14px;
+
+      transition: max-height 0.35s ease;
+    }
+
+    .faq-answer-inner {
+      padding-bottom: 22px;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+    }
+
+    .faq-item.active .faq-plus {
+      transform: rotate(45deg);
+    }
+
+    /* =====================================================
+       CONTACT
+    ===================================================== */
+
+    .contact-section {
+      padding-bottom: 130px;
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .contact-info h2 {
+      font-size: clamp(35px, 5vw, 55px);
+      line-height: 1;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+    }
+
+    .contact-info p {
+      color: #888;
+      max-width: 400px;
+      margin-bottom: 30px;
+    }
+
+    .contact-line {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .contact-line span {
+      color: #ffd600;
     }
 
     .contact-box {
-      max-width: 650px;
-      margin: auto;
+      background: #151515;
+      border: 1px solid #272727;
+      border-radius: 20px;
+      padding: 35px;
     }
 
     form {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 14px;
     }
 
     input,
@@ -285,258 +852,589 @@
     select {
       width: 100%;
 
-      padding: 15px;
+      padding: 15px 16px;
 
       border: 1px solid #292929;
       border-radius: 9px;
 
-      background: #181818;
+      background: #101010;
       color: #fff;
 
-      font-size: 16px;
+      font-size: 15px;
+
       outline: none;
+
+      transition: 0.25s;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #606060;
     }
 
     input:focus,
     textarea:focus,
     select:focus {
-      border-color: #ff3b8d;
+      border-color: #ffd600;
+      background: #131313;
     }
 
     textarea {
-      min-height: 150px;
+      min-height: 140px;
       resize: vertical;
     }
 
     .form-note {
-      color: #888;
-      font-size: 13px;
-      margin-top: -5px;
+      color: #666;
+      font-size: 12px;
+      text-align: center;
+      margin-top: 5px;
     }
+
+    /* =====================================================
+       FLOATING WHATSAPP
+    ===================================================== */
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 25px;
+      bottom: 25px;
+      z-index: 999;
+
+      width: 55px;
+      height: 55px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #ffd600;
+      color: #111;
+
+      border-radius: 50%;
+
+      text-decoration: none;
+      font-size: 23px;
+      font-weight: 700;
+
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
+      transition: 0.3s;
+    }
+
+    .floating-whatsapp:hover {
+      transform: scale(1.08);
+    }
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
 
     footer {
-      background: #080808;
       border-top: 1px solid #1e1e1e;
-
+      background: #080808;
+      padding: 35px 5%;
       text-align: center;
-
-      padding: 30px 20px;
-
-      color: #777;
+      color: #555;
+      font-size: 13px;
     }
 
-    .whatsapp-link {
-      margin-top: 20px;
-      text-align: center;
+    /* =====================================================
+       SCROLL ANIMATION
+    ===================================================== */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
     }
 
-    .whatsapp-link a {
-      color: #ff3b8d;
-      text-decoration: none;
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    @media (max-width: 850px) {
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 900px) {
 
       header {
-        flex-direction: column;
-        gap: 15px;
+        padding: 16px 5%;
       }
 
       nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
+        display: none;
       }
 
-      .jobs,
-      .advantages,
-      .salary {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat:nth-child(2) {
+        border-right: none;
+      }
+
+      .stat:nth-child(-n+2) {
+        border-bottom: 1px solid #292929;
+      }
+
+      .about-layout,
+      .contact-wrapper {
         grid-template-columns: 1fr;
+        gap: 40px;
       }
 
-      section {
-        padding: 70px 5%;
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .advantages {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
 
-      .logo {
-        font-size: 19px;
+      header {
+        justify-content: center;
       }
 
-      nav a {
-        font-size: 13px;
+      .header-button {
+        display: none;
       }
 
       .hero {
-        min-height: 80vh;
+        min-height: 82vh;
+      }
+
+      .hero-content {
+        padding: 80px 0;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+        letter-spacing: -2px;
       }
 
       .hero p {
         font-size: 16px;
       }
 
-      .btn {
-        width: 100%;
-        text-align: center;
+      .hero-buttons {
+        flex-direction: column;
       }
 
-      .btn-secondary {
-        margin: 10px 0 0;
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .stats {
+        margin-top: -35px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stat {
+        padding: 22px 10px;
+      }
+
+      .stat strong {
+        font-size: 25px;
+      }
+
+      .jobs,
+      .salary,
+      .advantages,
+      .process-grid {
+        grid-template-columns: 1fr;
       }
 
       .job,
+      .salary-card,
       .card,
-      .salary-card {
-        padding: 25px;
+      .process-card,
+      .contact-box {
+        padding: 27px;
       }
+
+      .section-title {
+        font-size: 38px;
+      }
+
+      .contact-info h2 {
+        font-size: 42px;
+      }
+
+      .floating-whatsapp {
+        width: 50px;
+        height: 50px;
+        right: 18px;
+        bottom: 18px;
+      }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- ШАПКА -->
+
+  <!-- =====================================================
+       HEADER
+  ===================================================== -->
 
   <header>
 
     <div class="logo">
-      TOO «LyamBda Media»
+      TOO <span>«LyamBda Media»</span>
     </div>
 
     <nav>
       <a href="#about">О компании</a>
       <a href="#jobs">Вакансии</a>
+      <a href="#process">Как это работает</a>
       <a href="#advantages">Условия</a>
-      <a href="#salary">Доход</a>
-      <a href="#contact">Отклик</a>
+      <a href="#faq">FAQ</a>
     </nav>
+
+    <a href="#contact" class="header-button">
+      Откликнуться
+    </a>
 
   </header>
 
 
-  <!-- ГЛАВНЫЙ ЭКРАН -->
+  <!-- =====================================================
+       HERO
+  ===================================================== -->
 
   <section class="hero">
 
-    <div class="hero-content">
+    <div class="hero-content reveal">
+
+      <div class="hero-label">
+        Открыт набор в Алматы
+      </div>
 
       <h1>
-        Работа для<br>
-        <span>ведущих трансляции</span><br>
-        и танцоров
+        Создавай контент.<br>
+        <span>Будь в кадре.</span><br>
+        Расти вместе с нами.
       </h1>
 
       <p>
-        Присоединяйся к нашей команде.
-        Участвуй в прямых трансляциях,
-        съёмках и творческих проектах.
+        Мы развиваем направление TikTok LIVE,
+        создаём развлекательный контент и собираем
+        команду людей, которые хотят работать
+        в современной медиа-сфере.
       </p>
 
-      <a href="#jobs" class="btn">
-        Смотреть вакансии
-      </a>
+      <div class="hero-buttons">
 
-      <a href="#contact" class="btn btn-secondary">
-        Откликнуться
-      </a>
+        <a href="#jobs" class="btn btn-primary">
+          Смотреть вакансии →
+        </a>
+
+        <a href="#contact" class="btn btn-outline">
+          Оставить заявку
+        </a>
+
+      </div>
 
     </div>
 
   </section>
 
 
-  <!-- О КОМПАНИИ -->
+  <!-- =====================================================
+       STATS
+  ===================================================== -->
+
+  <div class="stats container reveal">
+
+    <div class="stats-grid">
+
+      <div class="stat">
+        <strong>300 000 ₸</strong>
+        <span>фиксированный доход</span>
+      </div>
+
+      <div class="stat">
+        <strong>LIVE</strong>
+        <span>прямые трансляции</span>
+      </div>
+
+      <div class="stat">
+        <strong>FREE</strong>
+        <span>обучение</span>
+      </div>
+
+      <div class="stat">
+        <strong>18+</strong>
+        <span>возраст кандидатов</span>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       MARQUEE
+  ===================================================== -->
+
+  <div class="marquee">
+
+    <div class="marquee-track">
+
+      <div class="marquee-item">
+        TikTok LIVE <span>✦</span>
+      </div>
+
+      <div class="marquee-item">
+        CONTENT <span>✦</span>
+      </div>
+
+      <div class="marquee-item">
+        DANCE <span>✦</span>
+      </div>
+
+      <div class="marquee-item">
+        CREATIVE TEAM <span>✦</span>
+      </div>
+
+      <div class="marquee-item">
+        NEW OPPORTUNITIES <span>✦</span>
+      </div>
+
+      <div class="marquee-item">
+        TikTok LIVE <span>✦</span>
+      </div>
+
+      <div class="marquee-item">
+        CONTENT <span>✦</span>
+      </div>
+
+      <div class="marquee-item">
+        DANCE <span>✦</span>
+      </div>
+
+      <div class="marquee-item">
+        CREATIVE TEAM <span>✦</span>
+      </div>
+
+      <div class="marquee-item">
+        NEW OPPORTUNITIES <span>✦</span>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       ABOUT
+  ===================================================== -->
 
   <section id="about">
 
-    <h2 class="section-title">
-      О компании
-    </h2>
+    <div class="container">
 
-    <div class="about">
+      <div class="about-layout">
 
-      <p>
-        TOO «LyamBda Media» — творческая команда,
-        которая занимается созданием современного
-        развлекательного и танцевального контента
-        для социальных сетей.
+        <div class="reveal">
 
-        Мы принимаем на работу талантливых
-        ведущих трансляции и танцоров, которые хотят
-        развиваться в творческой сфере, участвовать
-        в прямых эфирах, съёмках и интересных проектах.
-      </p>
+          <div class="section-tag">
+            01 / О компании
+          </div>
+
+          <h2 class="section-title">
+            Здесь работа становится частью медиа.
+          </h2>
+
+          <div class="about-text">
+
+            <p>
+              TOO «LyamBda Media» — творческая команда,
+              которая занимается созданием современного
+              развлекательного и танцевального контента
+              для социальных сетей.
+            </p>
+
+            <p>
+              Мы развиваем ведущих трансляций и танцоров,
+              помогаем им раскрывать свои способности,
+              работать перед камерой и становиться частью
+              профессиональной команды.
+            </p>
+
+            <p>
+              Нам важны не только опыт и навыки.
+              Мы ищем людей, которые готовы учиться,
+              развиваться и пробовать новое.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="about-highlight reveal">
+
+          <strong>LIVE</strong>
+
+          <h3>
+            Ты можешь начать с нуля.
+          </h3>
+
+          <p>
+            Опыт проведения трансляций не обязателен.
+            Мы объясняем процесс, помогаем освоиться
+            перед камерой и работать с аудиторией.
+          </p>
+
+        </div>
+
+      </div>
 
     </div>
 
   </section>
 
 
-  <!-- ВАКАНСИИ -->
+  <!-- =====================================================
+       JOBS
+  ===================================================== -->
 
   <section id="jobs">
 
-    <h2 class="section-title">
-      Открытые вакансии
-    </h2>
+    <div class="container">
 
-    <div class="jobs">
+      <div class="section-heading reveal">
 
-      <div class="job">
+        <div class="section-tag">
+          02 / Вакансии
+        </div>
 
-        <h3>🎙️ Ведущий трансляции</h3>
+        <h2 class="section-title">
+          Выбери свою роль.
+        </h2>
 
-        <p>
-          Ищем общительных и харизматичных людей,
-          которые уверенно чувствуют себя перед камерой
-          и готовы вести прямые трансляции.
+        <p class="section-description">
+          Сейчас мы ищем людей на два творческих направления.
+          Посмотри, что подходит именно тебе.
         </p>
-
-        <ul>
-          <li>Проведение прямых трансляций</li>
-          <li>Общение со зрителями</li>
-          <li>Создание развлекательного контента</li>
-          <li>Работа перед камерой</li>
-          <li>Участие в проектах компании</li>
-        </ul>
-
-        <p>
-          <b>Опыт:</b> не обязателен
-        </p>
-
-        <a href="#contact" class="btn">
-          Откликнуться
-        </a>
 
       </div>
 
 
-      <div class="job">
+      <div class="jobs">
 
-        <h3>💃 Танцор</h3>
 
-        <p>
-          Ищем танцоров для съёмок,
-          клипов и других развлекательных проектов.
-        </p>
+        <!-- ВЕДУЩИЙ -->
 
-        <ul>
-          <li>Участие в танцевальных видео</li>
-          <li>Съёмка развлекательного контента</li>
-          <li>Участие в постановках</li>
-          <li>Съёмки рекламных проектов</li>
-          <li>Работа в творческой команде</li>
-        </ul>
+        <div class="job reveal">
 
-        <p>
-          <b>Опыт:</b> желателен
-        </p>
+          <div class="job-number">
+            01
+          </div>
 
-        <a href="#contact" class="btn">
-          Откликнуться
-        </a>
+          <div class="job-icon">
+            🎙️
+          </div>
+
+          <h3>
+            Ведущий трансляции
+          </h3>
+
+          <p class="job-description">
+            Ищем общительных и харизматичных людей,
+            которые уверенно чувствуют себя перед камерой
+            и готовы вести прямые трансляции.
+          </p>
+
+          <ul>
+
+            <li>Проведение прямых трансляций</li>
+
+            <li>Общение со зрителями</li>
+
+            <li>Создание развлекательного контента</li>
+
+            <li>Работа перед камерой</li>
+
+            <li>Участие в проектах компании</li>
+
+          </ul>
+
+          <div class="job-experience">
+            <b>Опыт:</b> не обязателен
+          </div>
+
+          <a href="#contact" class="btn btn-primary">
+            Хочу попробовать →
+          </a>
+
+        </div>
+
+
+        <!-- ТАНЦОР -->
+
+        <div class="job reveal">
+
+          <div class="job-number">
+            02
+          </div>
+
+          <div class="job-icon">
+            💃
+          </div>
+
+          <h3>
+            Танцор
+          </h3>
+
+          <p class="job-description">
+            Ищем танцоров для съёмок,
+            клипов и других развлекательных проектов.
+          </p>
+
+          <ul>
+
+            <li>Участие в танцевальных видео</li>
+
+            <li>Съёмка развлекательного контента</li>
+
+            <li>Участие в постановках</li>
+
+            <li>Съёмки рекламных проектов</li>
+
+            <li>Работа в творческой команде</li>
+
+          </ul>
+
+          <div class="job-experience">
+            <b>Опыт:</b> желателен
+          </div>
+
+          <a href="#contact" class="btn btn-primary">
+            Хочу попробовать →
+          </a>
+
+        </div>
+
 
       </div>
 
@@ -545,63 +1443,251 @@
   </section>
 
 
-  <!-- ПРЕИМУЩЕСТВА -->
+  <!-- =====================================================
+       PROCESS
+  ===================================================== -->
+
+  <section id="process" class="process">
+
+    <div class="container">
+
+      <div class="section-heading reveal">
+
+        <div class="section-tag">
+          03 / Как это работает
+        </div>
+
+        <h2 class="section-title">
+          Всё проще, чем кажется.
+        </h2>
+
+        <p class="section-description">
+          Не нужно месяцами ждать ответа.
+          Оставляешь заявку — знакомимся и обсуждаем детали.
+        </p>
+
+      </div>
+
+
+      <div class="process-grid">
+
+        <div class="process-card reveal">
+
+          <div class="process-number">
+            STEP 01
+          </div>
+
+          <h3>
+            Оставь заявку
+          </h3>
+
+          <p>
+            Заполни короткую форму на сайте
+            и отправь свои контакты.
+          </p>
+
+        </div>
+
+
+        <div class="process-card reveal">
+
+          <div class="process-number">
+            STEP 02
+          </div>
+
+          <h3>
+            Собеседование
+          </h3>
+
+          <p>
+            Познакомимся, расскажем о работе
+            и ответим на твои вопросы.
+          </p>
+
+        </div>
+
+
+        <div class="process-card reveal">
+
+          <div class="process-number">
+            STEP 03
+          </div>
+
+          <h3>
+            Обучение
+          </h3>
+
+          <p>
+            Покажем рабочий процесс и поможем
+            подготовиться к работе.
+          </p>
+
+        </div>
+
+
+        <div class="process-card reveal">
+
+          <div class="process-number">
+            STEP 04
+          </div>
+
+          <h3>
+            Старт
+          </h3>
+
+          <p>
+            После подготовки ты становишься
+            частью нашей команды.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       ADVANTAGES
+  ===================================================== -->
 
   <section id="advantages">
 
-    <h2 class="section-title">
-      Что мы предлагаем
-    </h2>
+    <div class="container">
 
-    <div class="advantages">
+      <div class="section-heading reveal">
 
-      <div class="card">
-        <h3>💰 Оплата</h3>
-        <p>
-          Оплата за работу и участие
-          в проектах компании.
-        </p>
+        <div class="section-tag">
+          04 / Почему мы
+        </div>
+
+        <h2 class="section-title">
+          Возможности для тех,
+          кто хочет развиваться.
+        </h2>
+
       </div>
 
-      <div class="card">
-        <h3>🎙️ Прямые эфиры</h3>
-        <p>
-          Возможность проводить трансляции,
-          общаться со зрителями и развивать
-          свои навыки ведущего.
-        </p>
-      </div>
 
-      <div class="card">
-        <h3>🚀 Развитие</h3>
-        <p>
-          Получайте новый опыт и развивайте
-          свои творческие навыки.
-        </p>
-      </div>
+      <div class="advantages">
 
-      <div class="card">
-        <h3>🎬 Съёмки</h3>
-        <p>
-          Участие в съёмках развлекательного
-          и танцевального контента.
-        </p>
-      </div>
 
-      <div class="card">
-        <h3>👥 Команда</h3>
-        <p>
-          Работа вместе с другими ведущими,
-          креаторами и танцорами.
-        </p>
-      </div>
+        <div class="card reveal">
 
-      <div class="card">
-        <h3>⭐ Проекты</h3>
-        <p>
-          Участие в новых творческих
-          и рекламных проектах.
-        </p>
+          <div class="card-icon">
+            💰
+          </div>
+
+          <h3>
+            Стабильная оплата
+          </h3>
+
+          <p>
+            Фиксированный доход и дополнительные
+            возможности заработка в зависимости
+            от направления работы.
+          </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+          <div class="card-icon">
+            🎙️
+          </div>
+
+          <h3>
+            Прямые эфиры
+          </h3>
+
+          <p>
+            Работа с камерой, аудиторией
+            и современным форматом
+            развлекательного контента.
+          </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+          <div class="card-icon">
+            🚀
+          </div>
+
+          <h3>
+            Развитие
+          </h3>
+
+          <p>
+            Получай новый опыт, развивай
+            свои навыки и открывай
+            новые возможности.
+          </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+          <div class="card-icon">
+            🎬
+          </div>
+
+          <h3>
+            Съёмки
+          </h3>
+
+          <p>
+            Участие в развлекательных,
+            танцевальных и рекламных
+            проектах компании.
+          </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+          <div class="card-icon">
+            👥
+          </div>
+
+          <h3>
+            Команда
+          </h3>
+
+          <p>
+            Работа вместе с ведущими,
+            креаторами, танцорами
+            и другими специалистами.
+          </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+          <div class="card-icon">
+            ⭐
+          </div>
+
+          <h3>
+            Новые проекты
+          </h3>
+
+          <p>
+            Возможность участвовать
+            в новых творческих
+            и рекламных проектах.
+          </p>
+
+        </div>
+
+
       </div>
 
     </div>
@@ -609,124 +1695,358 @@
   </section>
 
 
-  <!-- ДОХОД -->
+  <!-- =====================================================
+       SALARY
+  ===================================================== -->
 
-  <section id="salary">
+  <section id="salary" class="salary-section">
 
-    <h2 class="section-title">
-      Условия работы
-    </h2>
+    <div class="container">
 
-    <div class="salary">
+      <div class="section-heading reveal">
 
-      <div class="salary-card">
+        <div class="section-tag">
+          05 / Доход
+        </div>
 
-        <h3>🎙️ Ведущий трансляции</h3>
+        <h2 class="section-title">
+          Условия работы.
+        </h2>
 
-        <strong>
-          от 300 000 ₸
-        </strong>
-
-        <p>Проведение прямых трансляций</p>
-        <p>Общение со зрителями</p>
-        <p>Работа с командой</p>
-
-      </div>
-
-
-      <div class="salary-card">
-
-        <h3>💃 Танцор</h3>
-
-        <strong>
-          от 300 000 ₸
-        </strong>
-
-        <p>Участие в съёмках</p>
-        <p>Танцевальные проекты</p>
-        <p>Работа в команде</p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ОТКЛИК -->
-
-  <section id="contact">
-
-    <h2 class="section-title">
-      Хочешь работать с нами?
-    </h2>
-
-    <div class="contact-box">
-
-      <form id="contactForm">
-
-        <input
-          type="text"
-          id="name"
-          placeholder="Ваше имя"
-          required
-        >
-
-        <input
-          type="tel"
-          id="phone"
-          placeholder="Номер телефона"
-          required
-        >
-
-        <input
-          type="text"
-          id="tiktok"
-          placeholder="@ваш TikTok"
-        >
-
-        <select id="job" required>
-
-          <option value="">
-            Выберите вакансию
-          </option>
-
-          <option value="Ведущий трансляции">
-            Ведущий трансляции
-          </option>
-
-          <option value="Танцор">
-            Танцор
-          </option>
-
-        </select>
-
-        <textarea
-          id="message"
-          placeholder="Расскажите о себе, вашем опыте и навыках"
-          required
-        ></textarea>
-
-        <button
-          class="btn"
-          type="submit"
-        >
-          Отправить отклик в WhatsApp
-        </button>
-
-        <p class="form-note">
-          После отправки откроется WhatsApp
-          с подготовленным сообщением.
+        <p class="section-description">
+          Основные условия по открытым направлениям.
         </p>
 
-      </form>
+      </div>
+
+
+      <div class="salary">
+
+
+        <div class="salary-card reveal">
+
+          <h3>
+            🎙️ Ведущий трансляции
+          </h3>
+
+          <strong>
+            от 300 000 ₸
+          </strong>
+
+          <p>Проведение прямых трансляций</p>
+
+          <p>Общение со зрителями</p>
+
+          <p>Работа с командой</p>
+
+        </div>
+
+
+        <div class="salary-card reveal">
+
+          <h3>
+            💃 Танцор
+          </h3>
+
+          <strong>
+            от 300 000 ₸
+          </strong>
+
+          <p>Участие в съёмках</p>
+
+          <p>Танцевальные проекты</p>
+
+          <p>Работа в команде</p>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="salary-note">
+        * Финальные условия и детали работы обсуждаются на собеседовании.
+      </div>
 
     </div>
 
   </section>
 
 
-  <!-- FOOTER -->
+  <!-- =====================================================
+       FAQ
+  ===================================================== -->
+
+  <section id="faq">
+
+    <div class="container">
+
+      <div class="section-heading reveal">
+
+        <div class="section-tag">
+          06 / FAQ
+        </div>
+
+        <h2 class="section-title">
+          Частые вопросы.
+        </h2>
+
+      </div>
+
+
+      <div class="faq">
+
+
+        <div class="faq-item reveal">
+
+          <button class="faq-question">
+
+            Нужен ли опыт работы?
+
+            <span class="faq-plus">
+              +
+            </span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <div class="faq-answer-inner">
+
+              Для ведущего трансляции опыт не обязателен.
+              Главное — желание работать, общительность
+              и готовность развиваться перед камерой.
+              Для танцора опыт желателен.
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="faq-item reveal">
+
+          <button class="faq-question">
+
+            Что нужно делать ведущему?
+
+            <span class="faq-plus">
+              +
+            </span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <div class="faq-answer-inner">
+
+              Ведущий проводит прямые трансляции,
+              общается со зрителями, работает перед камерой
+              и участвует в развлекательном контенте.
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="faq-item reveal">
+
+          <button class="faq-question">
+
+            Есть ли обучение?
+
+            <span class="faq-plus">
+              +
+            </span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <div class="faq-answer-inner">
+
+              Да. Перед началом работы кандидат знакомится
+              с процессом и проходит необходимую подготовку.
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="faq-item reveal">
+
+          <button class="faq-question">
+
+            Как попасть на собеседование?
+
+            <span class="faq-plus">
+              +
+            </span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <div class="faq-answer-inner">
+
+              Оставь заявку через форму ниже.
+              После отправки откроется WhatsApp,
+              где можно будет продолжить общение
+              с нашей командой.
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       CONTACT
+  ===================================================== -->
+
+  <section id="contact" class="contact-section">
+
+    <div class="container">
+
+      <div class="contact-wrapper">
+
+
+        <div class="contact-info reveal">
+
+          <div class="section-tag">
+            07 / Отклик
+          </div>
+
+          <h2>
+            Возможно,<br>
+            мы ищем<br>
+            именно тебя.
+          </h2>
+
+          <p>
+            Оставь заявку. Расскажи немного о себе —
+            мы свяжемся с тобой и расскажем подробнее
+            о вакансии.
+          </p>
+
+          <div class="contact-line">
+            <span>●</span>
+            Алматы
+          </div>
+
+          <div class="contact-line">
+            <span>●</span>
+            Работа в команде
+          </div>
+
+          <div class="contact-line">
+            <span>●</span>
+            TikTok LIVE & Content
+          </div>
+
+        </div>
+
+
+        <div class="contact-box reveal">
+
+          <form id="contactForm">
+
+            <input
+              type="text"
+              id="name"
+              placeholder="Ваше имя"
+              required
+            >
+
+            <input
+              type="tel"
+              id="phone"
+              placeholder="Номер телефона"
+              required
+            >
+
+            <input
+              type="text"
+              id="tiktok"
+              placeholder="@ваш TikTok"
+            >
+
+            <select id="job" required>
+
+              <option value="">
+                Выберите вакансию
+              </option>
+
+              <option value="Ведущий трансляции">
+                Ведущий трансляции
+              </option>
+
+              <option value="Танцор">
+                Танцор
+              </option>
+
+            </select>
+
+            <textarea
+              id="message"
+              placeholder="Расскажите о себе, вашем опыте и навыках"
+              required
+            ></textarea>
+
+            <button
+              class="btn btn-primary"
+              type="submit"
+            >
+              Отправить заявку в WhatsApp →
+            </button>
+
+            <p class="form-note">
+              После отправки откроется WhatsApp
+              с подготовленным сообщением.
+            </p>
+
+          </form>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       FLOATING WHATSAPP
+  ===================================================== -->
+
+  <a
+    href="https://wa.me/77057646832"
+    target="_blank"
+    class="floating-whatsapp"
+    aria-label="WhatsApp"
+  >
+    ☎
+  </a>
+
+
+  <!-- =====================================================
+       FOOTER
+  ===================================================== -->
 
   <footer>
 
@@ -736,31 +2056,24 @@
   </footer>
 
 
+  <!-- =====================================================
+       JAVASCRIPT
+  ===================================================== -->
+
   <script>
 
-    /*
-      ==========================================
-      ВАЖНО!
-      ЗАМЕНИ НОМЕР НИЖЕ НА СВОЙ WHATSAPP.
-      
-      Формат:
-      77001234567
-      
-      Без +, пробелов и скобок.
-      ==========================================
-    */
+    /* =====================================================
+       WHATSAPP FORM
+    ===================================================== */
 
-    const whatsappNumber = "+77057646832";
-
+    const whatsappNumber = "77057646832";
 
     const form =
       document.getElementById("contactForm");
 
-
     form.addEventListener("submit", function(event) {
 
       event.preventDefault();
-
 
       const name =
         document.getElementById("name").value.trim();
@@ -777,9 +2090,8 @@
       const message =
         document.getElementById("message").value.trim();
 
-
       const whatsappMessage =
-        `Новая заявка на вакансию
+`Новая заявка на вакансию
 
 Имя: ${name}
 
@@ -792,13 +2104,11 @@ TikTok: ${tiktok || "Не указан"}
 О себе:
 ${message}`;
 
-
       const whatsappURL =
         "https://wa.me/" +
         whatsappNumber +
         "?text=" +
         encodeURIComponent(whatsappMessage);
-
 
       window.open(
         whatsappURL,
@@ -807,7 +2117,82 @@ ${message}`;
 
     });
 
+
+    /* =====================================================
+       FAQ
+    ===================================================== */
+
+    const faqQuestions =
+      document.querySelectorAll(".faq-question");
+
+    faqQuestions.forEach(function(question) {
+
+      question.addEventListener("click", function() {
+
+        const item =
+          this.parentElement;
+
+        document
+          .querySelectorAll(".faq-item")
+          .forEach(function(otherItem) {
+
+            if (otherItem !== item) {
+              otherItem.classList.remove("active");
+            }
+
+          });
+
+        item.classList.toggle("active");
+
+      });
+
+    });
+
+
+    /* =====================================================
+       SCROLL ANIMATION
+    ===================================================== */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+    const observer =
+      new IntersectionObserver(
+
+        function(entries) {
+
+          entries.forEach(function(entry) {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("visible");
+
+              observer.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+
+        {
+          threshold: 0.12
+        }
+
+      );
+
+
+    revealElements.forEach(function(element) {
+
+      observer.observe(element);
+
+    });
+
+
   </script>
+
 
 </body>
 </html>
